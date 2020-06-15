@@ -140,10 +140,14 @@ struct player2
 		int manager = 0;
 	}staff;
 }user2;
-int day_speed = 100;
+int day_speed = 5000;
+bool game_pause = 0;
 void normal_play(int game_year, int game_month, int game_day, unsigned long long money)
 {
-	ifstream fin("Airwaysim_Save.txt");
+	ifstream fin("WAD_Save.txt");
+	fin >> user2.game_year;
+	fin >> user2.game_month;
+	fin >> user2.game_day;
 	fin >> user2.airline_name;
 	fin >> user2.money;
 	fin >> user2.head_quarter;
@@ -336,9 +340,23 @@ void normal_play(int game_year, int game_month, int game_day, unsigned long long
 		for (int i = 0; i < 79; i++) cout << " ";
 		cout << "Welcome to Airwaysim!";
 		cout << endl << endl;
-		for (int i = 0; i < 21; i++) cout << " ";
-		cout << "Airline name:" << user2.airline_name << "   " << "Money:" << user2.money << "   HeadQuarter:" << user2.head_quarter << "   Office       Aircraft       Dashboard       Route       Game Time:";
-
+		for (int i = 0; i < 13; i++) cout << " ";
+		cout << "Airline name:" << user2.airline_name << "   " << "Money:" << user2.money << "   HeadQuarter:" << user2.head_quarter << "   Office       Aircraft       Dashboard       Route       Game Time:"<<user2.game_year<<"/"<<user2.game_month<<"/"<<user2.game_day<<"       Settings";
+		if (game_pause)
+		{
+			//game_pause();
+		}
+		else
+		{
+			if (++user2.game_day == 30)
+			{
+				if (++user2.game_month == 12)
+				{
+					user2.game_month = 1;
+					++user2.game_year;
+				}
+			}
+		}
 	}
 
 }

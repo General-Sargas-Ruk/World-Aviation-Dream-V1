@@ -143,7 +143,7 @@ struct player1
 }user1;
 int load_game()
 {
-	ifstream fin("Airwaysim_Save.txt");
+	ifstream fin("WAD_Save.txt");
 	if (!fin.is_open())
 	{
 		return 0;
@@ -354,10 +354,10 @@ void new_account()
 	for (int i = 0; i < 83; i++) cout << " ";
 	cout << "Airline Headquarter:";
 	gets_s(user1.head_quarter, 50);
-	ofstream fout("Airwaysim_Save.txt");
-	fout << user1.game_year;
-	fout << user1.game_month;
-	fout << user1.game_day;
+	ofstream fout("WAD_Save.txt");
+	fout << user1.game_year<<endl;
+	fout << user1.game_month<<endl;
+	fout << user1.game_day<<endl;
 	fout << user1.airline_name << endl;
 	fout << user1.money << endl;
 	fout << user1.head_quarter << endl;
