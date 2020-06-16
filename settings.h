@@ -7,4 +7,4 @@
 #include<conio.h>
 #include<Windows.h>
 using namespace std;
-void normal_play(int game_year, int game_month, int game_day, unsigned long long money);
+void settings();

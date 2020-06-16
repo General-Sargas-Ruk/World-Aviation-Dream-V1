@@ -132,6 +132,12 @@ struct player1
 		int price_eco;
 		int price_bus;
 		int price_fir;
+		int eco_demand;
+		int bus_demand;
+		int fir_demand;
+		int fixed_cost;
+		int dis;
+		int profit;
 	}airline[10001];
 	struct staff
 	{
@@ -331,6 +337,12 @@ int load_game()
 			fin >> user1.airline->price_eco;
 			fin >> user1.airline->price_bus;
 			fin >> user1.airline->price_fir;
+			fin >> user1.airline->eco_demand;
+			fin >> user1.airline->bus_demand;
+			fin >> user1.airline->fir_demand;
+			fin >> user1.airline->fixed_cost;
+			fin >> user1.airline->dis;
+			fin >> user1.airline->profit;
 		}
 		fin >> user1.staff.pilot;
 		fin >> user1.staff.crew;
@@ -480,6 +492,12 @@ void new_account()
 		fout << user1.airline->price_eco << endl;
 		fout << user1.airline->price_bus << endl;
 		fout << user1.airline->price_fir << endl;
+		fout << user1.airline->eco_demand;
+		fout << user1.airline->bus_demand;
+		fout << user1.airline->fir_demand;
+		fout << user1.airline->fixed_cost;
+		fout << user1.airline->dis;
+		fout << user1.airline->profit;
 	}
 	fout << user1.staff.pilot << endl;
 	fout << user1.staff.crew << endl;

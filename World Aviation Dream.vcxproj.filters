@@ -24,12 +24,36 @@
     <ClCompile Include="play.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="settings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="route.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="aircraft.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="office.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="play.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="route.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aircraft.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="office.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

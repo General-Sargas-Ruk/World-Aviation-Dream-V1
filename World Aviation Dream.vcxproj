@@ -140,12 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
+    <ClCompile Include="aircraft.cpp" />
+    <ClCompile Include="office.cpp" />
     <ClCompile Include="play.cpp" />
+    <ClCompile Include="route.cpp" />
+    <ClCompile Include="settings.cpp" />
     <ClCompile Include="World Aviation Dream.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
+    <ClInclude Include="aircraft.h" />
+    <ClInclude Include="office.h" />
     <ClInclude Include="play.h" />
+    <ClInclude Include="route.h" />
+    <ClInclude Include="settings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,8 @@
 #include "play.h"
+#include "route.h"
+#include "settings.h"
+#include "office.h"
+#include "aircraft.h"
 struct player2
 {
 	int game_year;
@@ -131,6 +135,12 @@ struct player2
 		int price_eco;
 		int price_bus;
 		int price_fir;
+		int eco_demand;
+		int bus_demand;
+		int fir_demand;
+		int fixed_cost;
+		int dis;
+		int profit;
 	}airline[10001];
 	struct staff
 	{
@@ -326,12 +336,19 @@ void normal_play(int game_year, int game_month, int game_day, unsigned long long
 		fin >> user2.airline->price_eco;
 		fin >> user2.airline->price_bus;
 		fin >> user2.airline->price_fir;
+		fin >> user2.airline->eco_demand;
+		fin >> user2.airline->bus_demand;
+		fin >> user2.airline->fir_demand;
+		fin >> user2.airline->fixed_cost;
+		fin >> user2.airline->dis;
+		fin >> user2.airline->profit;
 	}
 	fin >> user2.staff.pilot;
 	fin >> user2.staff.crew;
 	fin >> user2.staff.worker;
 	fin >> user2.staff.manager;
 	fin.close();
+	char ch;
 	while (1)
 	{
 		Sleep(day_speed);
@@ -342,6 +359,14 @@ void normal_play(int game_year, int game_month, int game_day, unsigned long long
 		cout << endl << endl;
 		for (int i = 0; i < 13; i++) cout << " ";
 		cout << "Airline name:" << user2.airline_name << "   " << "Money:" << user2.money << "   HeadQuarter:" << user2.head_quarter << "   Office       Aircraft       Dashboard       Route       Game Time:"<<user2.game_year<<"/"<<user2.game_month<<"/"<<user2.game_day<<"       Settings";
+		ch = _getch();
+		if (ch == 'p' && !game_pause) game_pause = 1;
+		if (ch == 'p' && game_pause) game_pause = 0;
+		if (ch == 's' && game_pause) settings();
+		if (ch == 'a' && game_pause) aircraft();
+		if (ch == 'o' && game_pause) office();
+		if (ch == 'r' && game_pause) route();
+		if (ch == 'd' && game_pause) //dashboard();
 		if (game_pause)
 		{
 			//game_pause();
